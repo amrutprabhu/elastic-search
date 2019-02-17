@@ -1,0 +1,13 @@
+version: "3"
+services:
+  elastic-search:
+    image: elasticsearch:6.6.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+    networks:
+      - elastic_network
+networks:
+  elastic_network:
